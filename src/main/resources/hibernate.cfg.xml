@@ -4,14 +4,20 @@
 		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 <session-factory>
- 		 <!-- database connection MYSQL -->
+
+ <!-- database connection H2DB -->
+<!--          <property name="connection.driver_class">org.h2.Driver</property> -->
+<!--          <property name="connection.url">jdbc:h2:mem:test</property> -->
+<!--          <property name="connection.username">sa</property> -->
+<!--          <property name="connection.password"></property> -->
+<!--          <property name="dialect">org.hibernate.dialect.H2Dialect</property> -->
+        
+ 		<!-- database connection MYSQL -->
 		<!-- <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property> -->
 		<!-- <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bilge_adam?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Turkey</property> -->
 		<!-- <property name="hibernate.connection.username">root</property> -->
 		<!-- <property name="hibernate.connection.password">root</property> -->
-		
-		<!-- HQL ile SQL dönüşümünü sağlar dialect -->
-		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>		
+       <!--<property name="dialect">org.hibernate.dialect.MySQLDialect</property>		 -->
 
 		<!-- database connection POSTGRESQL -->
 		<!-- <property name="hibernate.connection.driver_class">org.postgresql.Driver</property> -->
