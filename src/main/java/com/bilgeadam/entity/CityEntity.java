@@ -16,7 +16,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name = "city")
-public class City implements Serializable {
+public class CityEntity implements Serializable {
 	private static final long serialVersionUID = -1668131692666926083L;
 	
 	@Id
@@ -36,12 +36,12 @@ public class City implements Serializable {
 	private Date date;
 	
 	// parametresiz constructor
-	public City() {
+	public CityEntity() {
 		
 	}
 	
 	// parametreli constructor
-	public City(int id, String cityName, String cityLogo, Date date) {
+	public CityEntity(int id, String cityName, String cityLogo, Date date) {
 		this.id = id;
 		this.cityName = cityName;
 		this.cityLogo = cityLogo;
@@ -74,7 +74,7 @@ public class City implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		City other = (City) obj;
+		CityEntity other = (CityEntity) obj;
 		if (cityLogo == null) {
 			if (other.cityLogo != null)
 				return false;
