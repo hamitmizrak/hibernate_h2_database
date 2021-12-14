@@ -1,7 +1,6 @@
 package com.bilgeadam.main;
 
 import com.bilgeadam.controller.CityController;
-import com.bilgeadam.entity.CityEntity;
 
 public class CityMainTest {
 	
@@ -9,16 +8,17 @@ public class CityMainTest {
 		// JPQL- HQL-SQL
 		
 		//// Create
-		for (int i = 0; i < 10; i++) {
-			CityEntity cityEnty = new CityEntity("İstanbul" + (i + 1), "Bahçe" + (i * 25));
-			CityController studentController1 = new CityController();
-			studentController1.create(cityEnty);
-		}
+		// for (int i = 0; i < 10; i++) {
+		// CityEntity cityEnty = new CityEntity("İstanbul" + (i + 1), "Bahçe" + (i *
+		// 25));
+		// CityController studentController1 = new CityController();
+		// studentController1.create(cityEnty);
+		// }
 		
 		//// find
-		// CityController studentController2 = new CityController();
-		// int id = 1;
-		// studentController2.find(id);
+		CityController studentController2 = new CityController();
+		int id = 1;
+		studentController2.find(id);
 		
 		// // delete
 		// CityController cityController3 = new CityController();
