@@ -28,16 +28,16 @@ public class CityMainTest {
 		// cityController3.delete(cityEntity3);
 		
 		// // update
-		CityEntity studentEntity4 = new CityEntity("Malatya", "Kayısı");
-		studentEntity4.setId(1);
-		CityController studentController4 = new CityController();
-		studentController4.update(studentEntity4);
+		// CityEntity studentEntity4 = new CityEntity("Malatya", "Kayısı");
+		// studentEntity4.setId(1);
+		// CityController studentController4 = new CityController();
+		// studentController4.update(studentEntity4);
 		
 		//// list
-		// CityController studentController4 = new CityController();
-		// for (CityEntity temp : studentController4.list()) {
-		// System.out.println(temp);
-		// }
+		CityController studentController4 = new CityController();
+		for (CityEntity temp : studentController4.list()) {
+			System.out.println(temp);
+		}
 		
 	}
 	
