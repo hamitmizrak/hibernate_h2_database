@@ -10,9 +10,12 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
+import javax.persistence.Version;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -28,12 +31,34 @@ public class CityEntity implements Serializable {
 	@Column(name = "city_id", updatable = false)
 	private int id;
 	
+	// fiyatı rengi urunadı
+	// index: büyük verileri almak ve filterleeme hızlılık v.s
+	// indexes = {}
+	// indexes = {@Index(columnList="",name = "",unique=true) }
+	// name bizim @Colum ==> yazdığımız
+	// maximum index hesaplamması: (toplam Sutun sayısında-(PK+FK))/2+(PK+FK)
+	// minumum index hesaplamması: sutun/10
+	// ram şişirmek
+	
 	@Column(name = "city_name", nullable = false, unique = true)
 	private String cityName;
 	
 	@Column(name = "city_logo")
 	private String cityLogo;
 	// kırmızı,mavi,yeşil,turuncu : Enum
+	
+	// version: optimistic locking önlemek
+	@Version
+	private Long version;
+	
+	// LOB: Large Object Binary : büyük veriler için kullanıyoruz.
+	@Lob
+	@Column(name = "big_data")
+	private String bigData;
+	
+	// sadece java classında olsun Database eklemesin
+	@Transient
+	private int counter;
 	
 	@Enumerated(value = EnumType.STRING)
 	private EColor color;
