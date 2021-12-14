@@ -2,6 +2,7 @@ package com.bilgeadam.main;
 
 import com.bilgeadam.controller.CityController;
 import com.bilgeadam.entity.CityEntity;
+import com.bilgeadam.util.EColor;
 
 public class CityMainTest {
 	
@@ -10,7 +11,7 @@ public class CityMainTest {
 		
 		//// Create
 		for (int i = 0; i < 10; i++) {
-			CityEntity cityEnty = new CityEntity("İstanbul" + (i + 1), "Bahçe" + (i * 25));
+			CityEntity cityEnty = new CityEntity("İstanbul" + (i + 1), "Bahçe" + (i * 25), EColor.mavi);
 			CityController studentController1 = new CityController();
 			studentController1.create(cityEnty);
 		}

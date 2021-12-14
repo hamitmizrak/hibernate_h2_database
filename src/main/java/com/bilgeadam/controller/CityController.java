@@ -45,12 +45,10 @@ public class CityController implements IDatabaseCrud<CityEntity>, Serializable {
 			logger.error("ekleme anında hata meydana geldi !!!!! " + CityController.class);
 			e.printStackTrace();
 		}
-		
 	}
 	
 	@Override
 	public void delete(CityEntity entity) {
-		
 		try {
 			CityEntity findEntity = find(entity.getId());
 			if (findEntity != null) {
@@ -74,13 +72,13 @@ public class CityController implements IDatabaseCrud<CityEntity>, Serializable {
 			if (findEntity != null) {
 				findEntity.setCityName(entity.getCityName());
 				findEntity.setCityLogo(entity.getCityLogo());
+				findEntity.setColor(entity.getColor());
 				Session session = databaseConnectionHibernate();
 				session.getTransaction().begin();
 				session.merge(findEntity);
 				session.getTransaction().commit();
 				logger.info("Güncelleme Başarılı " + CityEntity.class);
 			}
-			
 		} catch (Exception e) {
 			logger.error("güncelleme anında hata meydana geldi !!!!! " + CityController.class);
 			e.printStackTrace();
@@ -93,13 +91,10 @@ public class CityController implements IDatabaseCrud<CityEntity>, Serializable {
 		Session session = databaseConnectionHibernate();
 		
 		// unutma: buradaki sorgulama entity sorgulaması yani java classına göre
-		// çağıracağız.
 		String hql = "select str from CityEntity as str where str.id>=:key";
 		TypedQuery<CityEntity> typedQuery = session.createQuery(hql, CityEntity.class);
-		
 		int id = 1;
 		typedQuery.setParameter("key", id);
-		
 		ArrayList<CityEntity> arrayList = (ArrayList<CityEntity>) typedQuery.getResultList();
 		logger.info("listelendi " + CityEntity.class);
 		return arrayList;

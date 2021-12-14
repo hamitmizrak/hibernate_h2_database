@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +15,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.CreationTimestamp;
+
+import com.bilgeadam.util.EColor;
 
 @Entity
 @Table(name = "city")
@@ -29,6 +33,10 @@ public class CityEntity implements Serializable {
 	
 	@Column(name = "city_logo")
 	private String cityLogo;
+	// kırmızı,mavi,yeşil,turuncu : Enum
+	
+	@Enumerated(value = EnumType.STRING)
+	private EColor color;
 	
 	@Temporal(value = TemporalType.TIMESTAMP)
 	@CreationTimestamp
@@ -41,10 +49,10 @@ public class CityEntity implements Serializable {
 	}
 	
 	// parametreli constructor
-	public CityEntity(String cityName, String cityLogo) {
+	public CityEntity(String cityName, String cityLogo, EColor color) {
 		this.cityName = cityName;
 		this.cityLogo = cityLogo;
-		
+		this.color = color;
 	}
 	
 	// toString
@@ -125,6 +133,18 @@ public class CityEntity implements Serializable {
 	
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	
+	public EColor getColor() {
+		return color;
+	}
+	
+	public void setColor(EColor color) {
+		this.color = color;
+	}
+	
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	
 }

@@ -29,7 +29,7 @@
 		<property name="showsql">true</property>
 		<property name="connection.autocommit">true</property>
 		
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">create-drop</property>
 		<!-- create: tablo yoksa oluştur varsa birşey yapma  -->
 		<!-- update: tablo yoksa oluştur varsa güncelle -->
 		<!-- create-drop:tablo yoksa oluştur varsa sil tekrar yükle  -->
