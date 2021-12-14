@@ -1,0 +1,131 @@
+package com.bilgeadam.entity;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.hibernate.annotations.CreationTimestamp;
+
+@Entity
+@Table(name = "city")
+public class City implements Serializable {
+	private static final long serialVersionUID = -1668131692666926083L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "city_id", updatable = false)
+	private int id;
+	
+	@Column(name = "city_name", nullable = false, unique = true)
+	private String cityName;
+	
+	@Column(name = "city_logo")
+	private String cityLogo;
+	
+	@Temporal(value = TemporalType.TIMESTAMP)
+	@CreationTimestamp
+	@Column(name = "created_date", updatable = false)
+	private Date date;
+	
+	// parametresiz constructor
+	public City() {
+		
+	}
+	
+	// parametreli constructor
+	public City(int id, String cityName, String cityLogo, Date date) {
+		this.id = id;
+		this.cityName = cityName;
+		this.cityLogo = cityLogo;
+		this.date = date;
+	}
+	
+	// toString
+	@Override
+	public String toString() {
+		return "City [id=" + id + ", cityName=" + cityName + ", cityLogo=" + cityLogo + ", date=" + date + "]";
+	}
+	
+	// hashCode
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((cityLogo == null) ? 0 : cityLogo.hashCode());
+		result = prime * result + ((cityName == null) ? 0 : cityName.hashCode());
+		result = prime * result + ((date == null) ? 0 : date.hashCode());
+		result = prime * result + id;
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		City other = (City) obj;
+		if (cityLogo == null) {
+			if (other.cityLogo != null)
+				return false;
+		} else if (!cityLogo.equals(other.cityLogo))
+			return false;
+		if (cityName == null) {
+			if (other.cityName != null)
+				return false;
+		} else if (!cityName.equals(other.cityName))
+			return false;
+		if (date == null) {
+			if (other.date != null)
+				return false;
+		} else if (!date.equals(other.date))
+			return false;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+	
+	// getter and setter
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public String getCityName() {
+		return cityName;
+	}
+	
+	public void setCityName(String cityName) {
+		this.cityName = cityName;
+	}
+	
+	public String getCityLogo() {
+		return cityLogo;
+	}
+	
+	public void setCityLogo(String cityLogo) {
+		this.cityLogo = cityLogo;
+	}
+	
+	public Date getDate() {
+		return date;
+	}
+	
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	
+}
