@@ -4,6 +4,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 import com.bilgeadam.entity.CityEntity;
+import com.bilgeadam.entity.MsiEntity;
 
 public class HibernateUtil {
 	// dış dünyada bununla bu classa erişim sağlayabileceğim.
@@ -22,6 +23,7 @@ public class HibernateUtil {
 			
 			// entity classlarımızı buraya ekleyeceğiz
 			configuration.addAnnotatedClass(CityEntity.class);
+			configuration.addAnnotatedClass(MsiEntity.class); // superclasstan aldık
 			
 			SessionFactory factory = configuration.configure("hibernate.cfg.xml").buildSessionFactory();
 			return factory;
