@@ -1,6 +1,7 @@
 package com.bilgeadam.main;
 
 import com.bilgeadam.controller.CityController;
+import com.bilgeadam.entity.CityEntity;
 
 public class CityMainTest {
 	
@@ -16,15 +17,15 @@ public class CityMainTest {
 		// }
 		
 		//// find
-		CityController studentController2 = new CityController();
-		int id = 1;
-		studentController2.find(id);
+		// CityController studentController2 = new CityController();
+		// int id = 1;
+		// studentController2.find(id);
 		
 		// // delete
-		// CityController cityController3 = new CityController();
-		// CityEntity cityEntity3 = new CityEntity();
-		// cityEntity3.setId(2);
-		// cityController3.delete(cityEntity3);
+		CityController cityController3 = new CityController();
+		CityEntity cityEntity3 = new CityEntity();
+		cityEntity3.setId(2);
+		cityController3.delete(cityEntity3);
 		
 		// // update
 		// CityEntity studentEntity4 = new CityEntity("Malatya", "Kayısı");
