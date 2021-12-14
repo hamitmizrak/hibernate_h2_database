@@ -9,12 +9,11 @@ public class CityMainTest {
 		// JPQL- HQL-SQL
 		
 		//// Create
-		// for (int i = 0; i < 10; i++) {
-		// CityEntity cityEnty = new CityEntity("İstanbul" + (i + 1), "Bahçe" + (i *
-		// 25));
-		// CityController studentController1 = new CityController();
-		// studentController1.create(cityEnty);
-		// }
+		for (int i = 0; i < 10; i++) {
+			CityEntity cityEnty = new CityEntity("İstanbul" + (i + 1), "Bahçe" + (i * 25));
+			CityController studentController1 = new CityController();
+			studentController1.create(cityEnty);
+		}
 		
 		//// find
 		// CityController studentController2 = new CityController();
@@ -34,10 +33,10 @@ public class CityMainTest {
 		// studentController4.update(studentEntity4);
 		
 		//// list
-		CityController studentController4 = new CityController();
-		for (CityEntity temp : studentController4.list()) {
-			System.out.println(temp);
-		}
+		// CityController studentController4 = new CityController();
+		// for (CityEntity temp : studentController4.list()) {
+		// System.out.println(temp);
+		// }
 		
 	}
 	
