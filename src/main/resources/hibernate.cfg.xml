@@ -4,7 +4,7 @@
 		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 <session-factory>
-  <!-- database connection MYSQL -->
+ 		 <!-- database connection MYSQL -->
 		<!-- <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property> -->
 		<!-- <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/bilge_adam?useSSL=false&amp;useLegacyDatetimeCode=false&amp;serverTimezone=Turkey</property> -->
 		<!-- <property name="hibernate.connection.username">root</property> -->
@@ -22,10 +22,11 @@
 		<!-- hibernate config -->
 		<property name="showsql">true</property>
 		<property name="connection.autocommit">true</property>
+		
 		<property name="hbm2ddl.auto">update</property>
 		<!-- create: tamamen sil tekrar oluştur -->
 		<!-- update: var olanı üzerinen yaz -->
-		<!-- create-drop: varsa siliyor tekrar oluşturuyor yoksa direk soluşturuyor. -->
+		<!-- create-drop: varsa siliyor tekrar oluşturuyor yoksa direk oluşturuyor. -->
 		
 		<!-- <property name="hbm2ddl.auto">create</property> -->
 		<!-- <property name="hbm2ddl.auto">update</property> -->
