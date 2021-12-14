@@ -3,6 +3,8 @@ package com.bilgeadam.util;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.bilgeadam.entity.CityEntity;
+
 public class HibernateUtil {
 	// dış dünyada bununla bu classa erişim sağlayabileceğim.
 	public static SessionFactory getSessionfactory() {
@@ -19,7 +21,7 @@ public class HibernateUtil {
 			Configuration configuration = new Configuration();
 			
 			// entity classlarımızı buraya ekleyeceğiz
-			// configuration.addAnnotatedClass(StudentEntity.class);
+			configuration.addAnnotatedClass(CityEntity.class);
 			
 			SessionFactory factory = configuration.configure("hibernate.cfg.xml").buildSessionFactory();
 			return factory;

@@ -41,11 +41,10 @@ public class CityEntity implements Serializable {
 	}
 	
 	// parametreli constructor
-	public CityEntity(int id, String cityName, String cityLogo, Date date) {
-		this.id = id;
+	public CityEntity(String cityName, String cityLogo) {
 		this.cityName = cityName;
 		this.cityLogo = cityLogo;
-		this.date = date;
+		
 	}
 	
 	// toString

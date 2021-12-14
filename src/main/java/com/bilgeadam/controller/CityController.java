@@ -97,7 +97,7 @@ public class CityController implements IDatabaseCrud<CityEntity>, Serializable {
 		String hql = "select str from CityEntity as str where str.id>=:key";
 		TypedQuery<CityEntity> typedQuery = session.createQuery(hql, CityEntity.class);
 		
-		long id = 1L;
+		int id = 1;
 		typedQuery.setParameter("key", id);
 		
 		ArrayList<CityEntity> arrayList = (ArrayList<CityEntity>) typedQuery.getResultList();
@@ -107,7 +107,7 @@ public class CityController implements IDatabaseCrud<CityEntity>, Serializable {
 	
 	// find
 	@Override
-	public CityEntity find(long id) {
+	public CityEntity find(int id) {
 		Session session = databaseConnectionHibernate();
 		CityEntity cityEntity;
 		try {

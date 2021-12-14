@@ -16,11 +16,11 @@ public interface IDatabaseCrud<T> {
 		return null;
 	}
 	
-	default T find(long id) {
+	default T find(int id) {
 		return null;
 	}
 	
-	default T singleResult(long id) {
+	default T singleResult(int id) {
 		return null;
 	}
 	
